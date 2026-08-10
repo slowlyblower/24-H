@@ -1,0 +1,17 @@
+"./bmi160.o"
+"./bt.o"
+"./empty.o"
+"./ti_msp_dl_config.o"
+"./startup_mspm0g350x_ticlang.o"
+"./encoder.o"
+"./gyro.o"
+"./lcd.o"
+"./main.o"
+"./motor.o"
+"./pid.o"
+"./sensor.o"
+"./state_machine.o"
+"./vision.o"
+-l"./device_linker.cmd"
+-ldevice.cmd.genlibs
+-llibc.a

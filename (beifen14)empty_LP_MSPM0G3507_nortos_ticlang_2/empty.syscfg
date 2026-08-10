@@ -1,0 +1,115 @@
+/**
+ * These arguments were used when this file was generated. They will be automatically applied on subsequent loads
+ * via the GUI or CLI. Run CLI with '--help' for additional information on how to override these arguments.
+ * @cliArgs --device "MSPM0G350X" --part "Default" --package "LQFP-64(PM)" --product "mspm0_sdk@2.10.00.04"
+ * @v2CliArgs --device "MSPM0G3507" --package "LQFP-64(PM)" --product "mspm0_sdk@2.10.00.04"
+ * @versions {"tool":"1.27.1+4634"}
+ */
+
+/**
+ * Import the modules used in this configuration.
+ */
+const GPIO   = scripting.addModule("/ti/driverlib/GPIO", {}, false);
+const GPIO1  = GPIO.addInstance();
+const GPIO2  = GPIO.addInstance();
+const GPIO3  = GPIO.addInstance();
+const GPIO4  = GPIO.addInstance();
+const GPIO5  = GPIO.addInstance();
+const GPIO6  = GPIO.addInstance();
+const GPIO7  = GPIO.addInstance();
+const GPIO8  = GPIO.addInstance();
+const GPIO9  = GPIO.addInstance();
+const PWM    = scripting.addModule("/ti/driverlib/PWM", {}, false);
+const PWM1   = PWM.addInstance();
+const SYSCTL = scripting.addModule("/ti/driverlib/SYSCTL");
+const TIMER  = scripting.addModule("/ti/driverlib/TIMER", {}, false);
+const TIMER1 = TIMER.addInstance();
+
+/**
+ * Write custom configuration values to the imported modules.
+ */
+GPIO1.$name                               = "GPIO_LED";
+GPIO1.associatedPins[0].$name             = "PIN_0";
+GPIO1.associatedPins[0].launchPadShortcut = "LED1En";
+
+const Board = scripting.addModule("/ti/driverlib/Board", {}, false);
+
+GPIO2.$name                         = "MOTOR_L_DIR";
+GPIO2.associatedPins[0].$name       = "PIN_1";
+GPIO2.associatedPins[0].pin.$assign = "PA14";
+
+GPIO3.$name                         = "MOTOR_R_DIR";
+GPIO3.associatedPins[0].$name       = "PIN_2";
+GPIO3.associatedPins[0].pin.$assign = "PA7";
+
+GPIO4.$name                         = "MOTOR_L_IN2";
+GPIO4.associatedPins[0].$name       = "PIN_3";
+GPIO4.associatedPins[0].pin.$assign = "PA15";
+
+GPIO5.$name                         = "MOTOR_R_IN2";
+GPIO5.associatedPins[0].$name       = "PIN_4";
+GPIO5.associatedPins[0].pin.$assign = "PA16";
+
+GPIO6.$name                         = "BUZZER";
+GPIO6.associatedPins[0].$name       = "PIN_6";
+GPIO6.associatedPins[0].pin.$assign = "PB13";
+
+GPIO7.$name                         = "RGB_LED_R";
+GPIO7.associatedPins[0].$name       = "PIN_7";
+GPIO7.associatedPins[0].pin.$assign = "PB22";
+
+GPIO8.$name                              = "ENC_L";
+GPIO8.associatedPins[0].$name            = "PIN_5";
+GPIO8.associatedPins[0].direction        = "INPUT";
+GPIO8.associatedPins[0].internalResistor = "PULL_UP";
+GPIO8.associatedPins[0].interruptEn      = true;
+GPIO8.associatedPins[0].polarity         = "FALL";
+GPIO8.associatedPins[0].pin.$assign      = "PB18";
+
+GPIO9.$name                              = "ENC_R";
+GPIO9.associatedPins[0].$name            = "PIN_8";
+GPIO9.associatedPins[0].direction        = "INPUT";
+GPIO9.associatedPins[0].internalResistor = "PULL_UP";
+GPIO9.associatedPins[0].interruptEn      = true;
+GPIO9.associatedPins[0].polarity         = "FALL";
+GPIO9.associatedPins[0].pin.$assign      = "PA24";
+
+PWM1.$name                              = "MOTOR_L_PWM";
+PWM1.timerCount                         = 1600;
+PWM1.timerStartTimer                    = true;
+PWM1.peripheral.ccp0Pin.$assign         = "PA12";
+PWM1.peripheral.ccp1Pin.$assign         = "PA13";
+PWM1.PWM_CHANNEL_0.$name                = "ti_driverlib_pwm_PWMTimerCC0";
+PWM1.PWM_CHANNEL_1.$name                = "ti_driverlib_pwm_PWMTimerCC1";
+PWM1.ccp0PinConfig.$name                = "ti_driverlib_gpio_GPIOPinGeneric0";
+PWM1.ccp0PinConfig.direction            = scripting.forceWrite("OUTPUT");
+PWM1.ccp0PinConfig.hideOutputInversion  = scripting.forceWrite(false);
+PWM1.ccp0PinConfig.onlyInternalResistor = scripting.forceWrite(false);
+PWM1.ccp0PinConfig.passedPeripheralType = scripting.forceWrite("Digital");
+PWM1.ccp1PinConfig.$name                = "ti_driverlib_gpio_GPIOPinGeneric1";
+PWM1.ccp1PinConfig.direction            = scripting.forceWrite("OUTPUT");
+PWM1.ccp1PinConfig.hideOutputInversion  = scripting.forceWrite(false);
+PWM1.ccp1PinConfig.onlyInternalResistor = scripting.forceWrite(false);
+PWM1.ccp1PinConfig.passedPeripheralType = scripting.forceWrite("Digital");
+
+SYSCTL.forceDefaultClkConfig = true;
+
+TIMER1.timerClkSrc        = "LFCLK";
+TIMER1.timerMode          = "PERIODIC";
+TIMER1.timerStartTimer    = true;
+TIMER1.interrupts         = ["ZERO"];
+TIMER1.$name              = "CTRL_TIMER";
+TIMER1.timerPeriod        = "10 ms";
+TIMER1.peripheral.$assign = "TIMG12";
+
+/**
+ * Pinmux solution for unlocked pins/peripherals. This ensures that minor changes to the automatic solver in a future
+ * version of the tool will not impact the pinmux you originally saw.  These lines can be completely deleted in order to
+ * re-solve from scratch.
+ */
+GPIO1.associatedPins[0].pin.$suggestSolution = "PA0";
+Board.peripheral.$suggestSolution            = "DEBUGSS";
+Board.peripheral.swclkPin.$suggestSolution   = "PA20";
+Board.peripheral.swdioPin.$suggestSolution   = "PA19";
+PWM1.peripheral.$suggestSolution             = "TIMG0";
+SYSCTL.peripheral.$suggestSolution           = "SYSCTL";

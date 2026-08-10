@@ -1,0 +1,98 @@
+
+**** Build of configuration 'Debug' for project 'empty_LP_MSPM0G3507_nortos_ticlang_2' ****
+
+"E:\\CCSIDE\\ccs\\utils\\bin\\gmake" -k -j 24 all -r -O 
+ 
+SysConfig - building file: "../empty.syscfg"
+"E:/CCSIDE/ccs/utils/sysconfig_1.27.1/sysconfig_cli.bat" -s "E:/CCSIDE/mspm0_sdk_2_10_00_04/.metadata/product.json" --script "D:/CCS_Projects/empty_LP_MSPM0G3507_nortos_ticlang_2/empty.syscfg" -o "." --compiler ticlang
+Running script...
+Validating...
+Generating Code (empty.syscfg)...
+Writing D:\CCS_Projects\empty_LP_MSPM0G3507_nortos_ticlang_2\Debug\device_linker.cmd...
+Writing D:\CCS_Projects\empty_LP_MSPM0G3507_nortos_ticlang_2\Debug\device.opt...
+Writing D:\CCS_Projects\empty_LP_MSPM0G3507_nortos_ticlang_2\Debug\device.cmd.genlibs...
+Writing D:\CCS_Projects\empty_LP_MSPM0G3507_nortos_ticlang_2\Debug\ti_msp_dl_config.c...
+Writing D:\CCS_Projects\empty_LP_MSPM0G3507_nortos_ticlang_2\Debug\ti_msp_dl_config.h...
+Writing D:\CCS_Projects\empty_LP_MSPM0G3507_nortos_ticlang_2\Debug\Event.dot...
+Finished building: "../empty.syscfg"
+ 
+Arm Compiler - building file: "../empty.c"
+"E:/CCSIDE/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe" -c @"device.opt"  -march=thumbv6m -mcpu=cortex-m0plus -mfloat-abi=soft -mlittle-endian -mthumb -O2 -I"D:/CCS_Projects/empty_LP_MSPM0G3507_nortos_ticlang_2" -I"D:/CCS_Projects/empty_LP_MSPM0G3507_nortos_ticlang_2/Debug" -I"E:/CCSIDE/mspm0_sdk_2_10_00_04/source/third_party/CMSIS/Core/Include" -I"E:/CCSIDE/mspm0_sdk_2_10_00_04/source" -gdwarf-3 -Wall -MMD -MP -MF"empty.d_raw" -MT"empty.o"  @"./device.opt"  -o"empty.o" "../empty.c"
+Finished building: "../empty.c"
+ 
+Arm Compiler - building file: "E:/CCSIDE/mspm0_sdk_2_10_00_04/source/ti/devices/msp/m0p/startup_system_files/ticlang/startup_mspm0g350x_ticlang.c"
+"E:/CCSIDE/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe" -c @"device.opt"  -march=thumbv6m -mcpu=cortex-m0plus -mfloat-abi=soft -mlittle-endian -mthumb -O2 -I"D:/CCS_Projects/empty_LP_MSPM0G3507_nortos_ticlang_2" -I"D:/CCS_Projects/empty_LP_MSPM0G3507_nortos_ticlang_2/Debug" -I"E:/CCSIDE/mspm0_sdk_2_10_00_04/source/third_party/CMSIS/Core/Include" -I"E:/CCSIDE/mspm0_sdk_2_10_00_04/source" -gdwarf-3 -Wall -MMD -MP -MF"startup_mspm0g350x_ticlang.d_raw" -MT"startup_mspm0g350x_ticlang.o"  @"./device.opt"  -o"startup_mspm0g350x_ticlang.o" "E:/CCSIDE/mspm0_sdk_2_10_00_04/source/ti/devices/msp/m0p/startup_system_files/ticlang/startup_mspm0g350x_ticlang.c"
+Finished building: "E:/CCSIDE/mspm0_sdk_2_10_00_04/source/ti/devices/msp/m0p/startup_system_files/ticlang/startup_mspm0g350x_ticlang.c"
+ 
+Arm Compiler - building file: "../gyro.c"
+"E:/CCSIDE/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe" -c @"device.opt"  -march=thumbv6m -mcpu=cortex-m0plus -mfloat-abi=soft -mlittle-endian -mthumb -O2 -I"D:/CCS_Projects/empty_LP_MSPM0G3507_nortos_ticlang_2" -I"D:/CCS_Projects/empty_LP_MSPM0G3507_nortos_ticlang_2/Debug" -I"E:/CCSIDE/mspm0_sdk_2_10_00_04/source/third_party/CMSIS/Core/Include" -I"E:/CCSIDE/mspm0_sdk_2_10_00_04/source" -gdwarf-3 -Wall -MMD -MP -MF"gyro.d_raw" -MT"gyro.o"  @"./device.opt"  -o"gyro.o" "../gyro.c"
+../gyro.c:127:14: warning: unused variable 'g_dt_sum' [-Wunused-variable]
+  127 | static float g_dt_sum = 0;
+      |              ^~~~~~~~
+1 warning generated.
+Finished building: "../gyro.c"
+ 
+Arm Compiler - building file: "../pid.c"
+"E:/CCSIDE/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe" -c @"device.opt"  -march=thumbv6m -mcpu=cortex-m0plus -mfloat-abi=soft -mlittle-endian -mthumb -O2 -I"D:/CCS_Projects/empty_LP_MSPM0G3507_nortos_ticlang_2" -I"D:/CCS_Projects/empty_LP_MSPM0G3507_nortos_ticlang_2/Debug" -I"E:/CCSIDE/mspm0_sdk_2_10_00_04/source/third_party/CMSIS/Core/Include" -I"E:/CCSIDE/mspm0_sdk_2_10_00_04/source" -gdwarf-3 -Wall -MMD -MP -MF"pid.d_raw" -MT"pid.o"  @"./device.opt"  -o"pid.o" "../pid.c"
+Finished building: "../pid.c"
+ 
+Arm Compiler - building file: "../lcd.c"
+"E:/CCSIDE/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe" -c @"device.opt"  -march=thumbv6m -mcpu=cortex-m0plus -mfloat-abi=soft -mlittle-endian -mthumb -O2 -I"D:/CCS_Projects/empty_LP_MSPM0G3507_nortos_ticlang_2" -I"D:/CCS_Projects/empty_LP_MSPM0G3507_nortos_ticlang_2/Debug" -I"E:/CCSIDE/mspm0_sdk_2_10_00_04/source/third_party/CMSIS/Core/Include" -I"E:/CCSIDE/mspm0_sdk_2_10_00_04/source" -gdwarf-3 -Wall -MMD -MP -MF"lcd.d_raw" -MT"lcd.o"  @"./device.opt"  -o"lcd.o" "../lcd.c"
+Finished building: "../lcd.c"
+ 
+Arm Compiler - building file: "../main.c"
+"E:/CCSIDE/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe" -c @"device.opt"  -march=thumbv6m -mcpu=cortex-m0plus -mfloat-abi=soft -mlittle-endian -mthumb -O2 -I"D:/CCS_Projects/empty_LP_MSPM0G3507_nortos_ticlang_2" -I"D:/CCS_Projects/empty_LP_MSPM0G3507_nortos_ticlang_2/Debug" -I"E:/CCSIDE/mspm0_sdk_2_10_00_04/source/third_party/CMSIS/Core/Include" -I"E:/CCSIDE/mspm0_sdk_2_10_00_04/source" -gdwarf-3 -Wall -MMD -MP -MF"main.d_raw" -MT"main.o"  @"./device.opt"  -o"main.o" "../main.c"
+../main.c:150:30: warning: variable 'last_line' set but not used [-Wunused-but-set-variable]
+  150 |     bool recovering = false, last_line = false;
+      |                              ^
+../main.c:22:13: warning: unused function 'beep' [-Wunused-function]
+   22 | static void beep(uint16_t ms) { (void)ms; }
+      |             ^~~~
+2 warnings generated.
+Finished building: "../main.c"
+ 
+Arm Compiler - building file: "../motor.c"
+"E:/CCSIDE/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe" -c @"device.opt"  -march=thumbv6m -mcpu=cortex-m0plus -mfloat-abi=soft -mlittle-endian -mthumb -O2 -I"D:/CCS_Projects/empty_LP_MSPM0G3507_nortos_ticlang_2" -I"D:/CCS_Projects/empty_LP_MSPM0G3507_nortos_ticlang_2/Debug" -I"E:/CCSIDE/mspm0_sdk_2_10_00_04/source/third_party/CMSIS/Core/Include" -I"E:/CCSIDE/mspm0_sdk_2_10_00_04/source" -gdwarf-3 -Wall -MMD -MP -MF"motor.d_raw" -MT"motor.o"  @"./device.opt"  -o"motor.o" "../motor.c"
+Finished building: "../motor.c"
+ 
+Arm Compiler - building file: "../state_machine.c"
+"E:/CCSIDE/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe" -c @"device.opt"  -march=thumbv6m -mcpu=cortex-m0plus -mfloat-abi=soft -mlittle-endian -mthumb -O2 -I"D:/CCS_Projects/empty_LP_MSPM0G3507_nortos_ticlang_2" -I"D:/CCS_Projects/empty_LP_MSPM0G3507_nortos_ticlang_2/Debug" -I"E:/CCSIDE/mspm0_sdk_2_10_00_04/source/third_party/CMSIS/Core/Include" -I"E:/CCSIDE/mspm0_sdk_2_10_00_04/source" -gdwarf-3 -Wall -MMD -MP -MF"state_machine.d_raw" -MT"state_machine.o"  @"./device.opt"  -o"state_machine.o" "../state_machine.c"
+Finished building: "../state_machine.c"
+ 
+Arm Compiler - building file: "../sensor.c"
+"E:/CCSIDE/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe" -c @"device.opt"  -march=thumbv6m -mcpu=cortex-m0plus -mfloat-abi=soft -mlittle-endian -mthumb -O2 -I"D:/CCS_Projects/empty_LP_MSPM0G3507_nortos_ticlang_2" -I"D:/CCS_Projects/empty_LP_MSPM0G3507_nortos_ticlang_2/Debug" -I"E:/CCSIDE/mspm0_sdk_2_10_00_04/source/third_party/CMSIS/Core/Include" -I"E:/CCSIDE/mspm0_sdk_2_10_00_04/source" -gdwarf-3 -Wall -MMD -MP -MF"sensor.d_raw" -MT"sensor.o"  @"./device.opt"  -o"sensor.o" "../sensor.c"
+Finished building: "../sensor.c"
+ 
+Arm Compiler - building file: "../encoder.c"
+"E:/CCSIDE/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe" -c @"device.opt"  -march=thumbv6m -mcpu=cortex-m0plus -mfloat-abi=soft -mlittle-endian -mthumb -O2 -I"D:/CCS_Projects/empty_LP_MSPM0G3507_nortos_ticlang_2" -I"D:/CCS_Projects/empty_LP_MSPM0G3507_nortos_ticlang_2/Debug" -I"E:/CCSIDE/mspm0_sdk_2_10_00_04/source/third_party/CMSIS/Core/Include" -I"E:/CCSIDE/mspm0_sdk_2_10_00_04/source" -gdwarf-3 -Wall -MMD -MP -MF"encoder.d_raw" -MT"encoder.o"  @"./device.opt"  -o"encoder.o" "../encoder.c"
+../encoder.c:39:6: error: conflicting types for 'encoder_update'
+   39 | void encoder_update(void)
+      |      ^
+..\encoder.h:14:6: note: previous declaration is here
+   14 | void encoder_update(int16_t pwm_l, int16_t pwm_r, float dt);
+      |      ^
+../encoder.c:46:29: error: use of undeclared identifier 'PULSE_PER_CM'
+   46 |     g_speed_l = (float)dl / PULSE_PER_CM / CONTROL_PERIOD_S;
+      |                             ^
+../encoder.c:47:29: error: use of undeclared identifier 'PULSE_PER_CM'
+   47 |     g_speed_r = (float)dr / PULSE_PER_CM / CONTROL_PERIOD_S;
+      |                             ^
+../encoder.c:49:29: error: use of undeclared identifier 'PULSE_PER_CM'
+   49 |     g_dist_l += (float)dl / PULSE_PER_CM;
+      |                             ^
+../encoder.c:50:29: error: use of undeclared identifier 'PULSE_PER_CM'
+   50 |     g_dist_r += (float)dr / PULSE_PER_CM;
+      |                             ^
+5 errors generated.
+Arm Compiler - building file: "ti_msp_dl_config.c"
+"E:/CCSIDE/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe" -c @"device.opt"  -march=thumbv6m -mcpu=cortex-m0plus -mfloat-abi=soft -mlittle-endian -mthumb -O2 -I"D:/CCS_Projects/empty_LP_MSPM0G3507_nortos_ticlang_2" -I"D:/CCS_Projects/empty_LP_MSPM0G3507_nortos_ticlang_2/Debug" -I"E:/CCSIDE/mspm0_sdk_2_10_00_04/source/third_party/CMSIS/Core/Include" -I"E:/CCSIDE/mspm0_sdk_2_10_00_04/source" -gdwarf-3 -Wall -MMD -MP -MF"ti_msp_dl_config.d_raw" -MT"ti_msp_dl_config.o"  @"./device.opt"  -o"ti_msp_dl_config.o" "ti_msp_dl_config.c"
+Finished building: "ti_msp_dl_config.c"
+ 
+Arm Compiler - building file: "../bmi160.c"
+"E:/CCSIDE/ccs/tools/compiler/ti-cgt-armllvm_4.0.4.LTS/bin/tiarmclang.exe" -c @"device.opt"  -march=thumbv6m -mcpu=cortex-m0plus -mfloat-abi=soft -mlittle-endian -mthumb -O2 -I"D:/CCS_Projects/empty_LP_MSPM0G3507_nortos_ticlang_2" -I"D:/CCS_Projects/empty_LP_MSPM0G3507_nortos_ticlang_2/Debug" -I"E:/CCSIDE/mspm0_sdk_2_10_00_04/source/third_party/CMSIS/Core/Include" -I"E:/CCSIDE/mspm0_sdk_2_10_00_04/source" -gdwarf-3 -Wall -MMD -MP -MF"bmi160.d_raw" -MT"bmi160.o"  @"./device.opt"  -o"bmi160.o" "../bmi160.c"
+Finished building: "../bmi160.c"
+ 
+gmake: Target 'all' not remade because of errors.
+ 
+**** Build finished ****
+
